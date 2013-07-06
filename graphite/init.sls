@@ -20,22 +20,22 @@ graphite-pips:
     - require:
       - pkg: python-pip
 
-{{ pillar['saltbin'] }}/graphite_install:
+/opt/graphite/storage/log/webapp:
+  file.directory:
+    - makedirs: True
+
+
+/opt/graphite/conf/storage-schemas.conf:
   file.managed:
     - template: jinja
-    - source: salt://graphite/graphite.sh
-    - user: {{user}}
-    - group: {{user}}
-    - mode: 755
+    - source: salt://graphite/storage-schemas.conf
 
+/opt/graphite/conf/carbon.conf:
+  file.managed:
+    - template: jinja
+    - source: salt://graphite/carbon.conf
 
-graphite_install:
-  cmd.wait:
-    - cwd: {{pillar['saltbin']}}
-    - name: sudo -u {{user}} {{pillar['saltbin']}}/graphite_install
-    - require:                             
-      - file: {{pillar['saltbin']}}/graphite_install
-      - pip: graphite-pips
-    - watch:
-      - file: {{pillar['saltbin']}}/graphite_install
-
+/opt/graphite/webapp/graphite/local_settings.py:
+  file.managed:
+    - template: jinja
+    - source: salt://graphite/local_settings.py
