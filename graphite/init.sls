@@ -14,16 +14,11 @@ graphite-base-pkgs:
       - python-cairo 
       - pkg-config
 
-{#
 graphite-pips:
   pip.installed:
     - requirements: salt://graphite/requirements.txt
     - require:
       - pkg: python-pip
-#}
-graphite-pips:
-  pip.installed:
-    - pkgs: django==1.3,python-memcached,django-tagging,twisted,whisper,carbon,graphite-web
 
 /opt/graphite/storage/log/webapp:
   file.directory:
