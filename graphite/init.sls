@@ -2,7 +2,7 @@
 {% set user = salt['env.user']() %}
 
 # required packages for graphite
-common-base-pkgs:
+graphite-base-pkgs:
   pkg.installed:
     - pkgs:
       - memcached 
