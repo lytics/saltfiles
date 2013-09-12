@@ -1,0 +1,7 @@
+
+
+This is gets the header.h files needed for zookeeper lib's
+such as gozk and other zookeeper clients
+
+It also builds the zookeeper lib
+

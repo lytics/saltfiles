@@ -1,0 +1,13 @@
+To create this package:
+
+1.  Create tar file::
+    rm /Users/aaron/gh/lytics/lio/devops/salt/thrift/thrift.tar
+    cd /Users/aaron/dev/thriftsvn/trunk
+    tar -cvf /Users/aaron/gy/lytics/lio/devops/salt/thrift/thrift.tar .
+
+    tar -cvf /Users/aaron/gh/lytics/lio/devops/salt/thrift/thrift.tar /Users/aaron/dev/thriftsvn/trunk
+
+2.  Copy over one go file:
+  cd /Users/aaron/gh/lytics/lio/devops/salt/thrift
+  rm t_go_generator.cc
+  cp /Users/aaron/dev/thriftsvn/trunk/compiler/cpp/src/generate/t_go_generator.cc .
