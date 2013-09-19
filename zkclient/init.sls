@@ -11,7 +11,7 @@ libzookeeper-mt-dev:
 {{pillar['saltbin']}}/zklibinstall:
   cmd.script:
     - template: jinja
-    - source: salt://zkclient/zkclient3.4.sh
+    - source: salt://zkclient/zkclient.sh
     - unless: test -f /usr/local/include/zookeeper.h
 
 
