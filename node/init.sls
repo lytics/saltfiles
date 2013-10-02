@@ -44,6 +44,11 @@ npm install -fg less:
   cmd.run:
     - unless:  which lessc >/dev/null
 
+# grunt task runner
+npm install -fg grunt:
+  cmd.run:
+    - unless:  which grunt >/dev/null
+
 
 {#
 
