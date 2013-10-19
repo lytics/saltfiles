@@ -39,3 +39,12 @@ graphite-pips:
   file.managed:
     - template: jinja
     - source: salt://graphite/local_settings.py
+
+# ===========================================
+#  Finish Configuring Graphite
+# ===========================================
+/opt/graphite/graphite_install.sh:
+  cmd.script:
+    - template: jinja
+    - source: salt://graphite/graphite_install.sh
+    - unless: test -d /opt/graphite/storage/log/webapp

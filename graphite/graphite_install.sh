@@ -32,21 +32,14 @@ mkdir -p /opt/graphite/storage/log/webapp
 
 # Copy over the local settings file and initialize database
 cd /opt/graphite/webapp/graphite/
-cp local_settings.py.example local_settings.py
-#python manage.py syncdb  # Follow the prompts, creating a superuser is optional
 
+#cp local_settings.py.example local_settings.py
+#python manage.py syncdb  # Follow the prompts, creating a superuser is optional
+python manage.py syncdb --noinput 
 
 # cd /opt/graphite/bin
 # sudo ./carbon-cache.py start #daemonizes itself
-# echo "metd.random.diceroll 4 `date +%s`" | nc lio27 2003;
 
 #cd /opt/graphite 
 #PYTHONPATH=`pwd`/whisper ./bin/run-graphite-devel-server.py --libs=`pwd`/webapp/ /opt/graphite/
 
-# echo 'metd.rand2.diceroll 4 `date +%s`' | nc lio27 2003; # doesnt work
-# echo "metd.rand3.diceroll 4 `date +%s`" | nc lio27 2003; # works
-
-# echo "metd.rand4.diceroll 4 `date +%s`
-# metd.rand5.diceroll 4 `date +%s`" | nc lio27 2003; # both work
-
-# echo "metd.rand6.nodate 4 " | nc lio27 2003; # no
