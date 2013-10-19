@@ -54,9 +54,19 @@ graphite-pips:
     - template: jinja
     - source: salt://graphite/graphiteweb.init.conf
 
+/etc/monit/conf.d/graphiteweb.conf:
+  file.managed:
+    - template: jinja
+    - source: salt://graphite/graphiteweb.monit.conf
+
 
 /etc/init/carbon.conf:
   file.managed:
     - template: jinja
     - source: salt://graphite/carbon.init.conf
+
+/etc/monit/conf.d/carbon.conf:
+  file.managed:
+    - template: jinja
+    - source: salt://graphite/carbon.monit.conf
 
