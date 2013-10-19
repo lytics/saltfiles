@@ -24,7 +24,6 @@ graphite-pips:
   file.directory:
     - makedirs: True
 
-
 /opt/graphite/conf/storage-schemas.conf:
   file.managed:
     - template: jinja
@@ -41,10 +40,23 @@ graphite-pips:
     - source: salt://graphite/local_settings.py
 
 # ===========================================
-#  Finish Configuring Graphite
+#  Finish Configuring Graphite DB
 # ===========================================
 /opt/graphite/graphite_install.sh:
   cmd.script:
     - template: jinja
     - source: salt://graphite/graphite_install.sh
-    - unless: test -d /opt/graphite/storage/log/webapp
+    - unless: test -f /opt/graphite/dbinstalled.txt
+
+
+/etc/init/graphiteweb.conf:
+  file.managed:
+    - template: jinja
+    - source: salt://graphite/graphiteweb.init.conf
+
+
+/etc/init/carbon.conf:
+  file.managed:
+    - template: jinja
+    - source: salt://graphite/carbon.init.conf
+
