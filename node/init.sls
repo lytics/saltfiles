@@ -21,63 +21,37 @@ installnode:
       - file: {{pillar['saltbin']}}/nodeinstall
 
 # node supervisor
-npm install -fg supervisor:
-  cmd.run:
-    - unless:  which supervisor >/dev/null
+nodesupervisor:
+  npm.installed:
+    - name: supervisor
+    - runas: {{user}}
 
 # node docpad
-npm install -fg docpad:
-  cmd.run:
-    - unless:  which docpad >/dev/null
+nodedocpad:
+  npm.installed:
+    - name: docpad
+    - runas: {{user}}
 
-npm install -fg node-static:
-  cmd.run:
-    - unless:  which static >/dev/null
-
-# node coffeescript
-npm install -fg coffee-script:
-  cmd.run:
-    - unless:  which coffee >/dev/null
-
-# less css compiler (only web ui needs this, different roles?)
-npm install -fg less:
-  cmd.run:
-    - unless:  which lessc >/dev/null
-
-
-{#
-
-{{ pillar['saltbin'] }}/nodeinstall:
-  cmd.script:
-    - template: jinja
-    - source: salt://node/node.sh
-    - unless: test -f /usr/local/bin/node
-    - user: {{user}}
-    - group: {{user}}
-
-
-# node supervisor
-npm install -fg supervisor:
-  cmd.run:
-    - unless:  which supervisor >/dev/null
-
-# node docpad
-npm install -fg docpad:
-  cmd.run:
-    - unless:  which docpad >/dev/null
-
-npm install -fg node-static:
-  cmd.run:
-    - unless:  which static >/dev/null
+# node node-static
+nodestatic:
+  npm.installed:
+    - name: node-static
+    - runas: {{user}}
 
 # node coffeescript
-npm install -fg coffee-script:
-  cmd.run:
-    - unless:  which coffee >/dev/null
+nodecoffee:
+  npm.installed:
+    - name: coffee-script
+    - runas: {{user}}
 
 # less css compiler (only web ui needs this, different roles?)
-npm install -fg less:
-  cmd.run:
-    - unless:  which lessc >/dev/null
+nodeless:
+  npm.installed:
+    - name: less
+    - runas: {{user}}
 
-#}
+# grunt task runner
+nodegrunt:
+  npm.installed:
+    - name: grunt
+    - runas: {{user}}
