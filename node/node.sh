@@ -6,7 +6,7 @@
 {% set user = salt['env.user']() %}
 
 
-VER="0.10.12"
+VER="0.10.21"
 # Download & Unpack Node.js 
 echo 'Download Node.js - v. $VER'
 rm -rf /tmp/node-install 
@@ -19,6 +19,8 @@ tar -zxf $NODEFILE.tar.gz
 echo 'Node.js download & unpack completed'
 cd $NODEFILE
 # cp -f bin/* /usr/local/bin/
+# lets get rid of existing node modules as we are upgrading
+rm -rf /usr/local/lib/node_modules
 cp -rf * /usr/local/
 echo 'Node.js install completed'
 
