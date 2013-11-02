@@ -53,5 +53,5 @@ nodeless:
 # grunt task runner
 nodegrunt:
   npm.installed:
-    - name: grunt
+    - name: grunt-cli
     - runas: {{user}}
