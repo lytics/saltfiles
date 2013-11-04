@@ -55,3 +55,9 @@ nodegrunt:
   npm.installed:
     - name: grunt-cli
     - runas: {{user}}
+
+# grunt task runner
+uglify-js:
+  npm.installed:
+    - name: uglify-js:
+    - runas: {{user}}
