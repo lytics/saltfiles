@@ -2,7 +2,7 @@
 
 cd /tmp
 
-apt-get install libcppunit-dev 
+apt-get install --yes --force-yes -q libcppunit-dev 
 
 VER="3.4.6"
 # remove the folder 
