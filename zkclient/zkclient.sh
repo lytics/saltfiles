@@ -19,6 +19,7 @@ tar xf zookeeper-$VER.tar.gz
 
 # copy header files 
 mkdir -p /usr/local/include 
+mkdir -p /usr/local/share/aclocal 
 cp zookeeper-$VER/src/c/include/*.h /usr/local/include 
 cp zookeeper-$VER/src/c/generated/*.h /usr/local/include 
 
