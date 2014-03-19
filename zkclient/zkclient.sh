@@ -9,7 +9,8 @@ VER="3.4.6"
 rm -rf zookeeper-$VER 
 if [ ! -f zookeeper-$VER.tar.gz ]; then
 	echo "file not found"
-	wget http://apache.cs.utah.edu/zookeeper/zookeeper-$VER/zookeeper-$VER.tar.gz
+	#wget http://apache.cs.utah.edu/zookeeper/zookeeper-$VER/zookeeper-$VER.tar.gz
+	wget http://download.nextag.com/apache/zookeeper/zookeeper-$VER/zookeeper-$VER.tar.gz
 else
     echo "File found!"
 fi
