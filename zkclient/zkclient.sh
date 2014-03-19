@@ -4,7 +4,7 @@ cd /tmp
 
 apt-get install libcppunit-dev 
 
-VER="3.4.5"
+VER="3.4.6"
 # remove the folder 
 rm -rf zookeeper-$VER 
 if [ ! -f zookeeper-$VER.tar.gz ]; then
