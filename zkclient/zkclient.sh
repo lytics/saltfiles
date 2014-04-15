@@ -2,9 +2,9 @@
 
 cd /tmp
 
-apt-get install --yes --force-yes -q libcppunit-dev 
+apt-get install --yes --force-yes -q libcppunit-dev autoconf
 
-VER="3.4.6"
+VER="3.4.5"
 # remove the folder 
 rm -rf zookeeper-$VER 
 if [ ! -f zookeeper-$VER.tar.gz ]; then
@@ -35,3 +35,5 @@ ACLOCAL="aclocal -I /usr/local/share/aclocal" autoreconf -if
 ./configure 
 
 make install 
+
+cp /usr/local/lib/libzoo* /usr/lib 
