@@ -2,9 +2,9 @@
 
 cd /tmp
 
-wget https://dist.apache.org/repos/dist/release/thrift/0.9.0/thrift-0.9.0.tar.gz -O thrift.tar.gz
+wget https://dist.apache.org/repos/dist/release/thrift/0.9.1/thrift-0.9.1.tar.gz -O thrift.tar.gz
 tar xzf thrift.tar.gz
-cd thrift-0.9.0
+cd thrift-0.9.1
 
 export THRIFT=$(pwd)
 
@@ -25,7 +25,7 @@ make
 make install
 
 cd /tmp
-rm -rf thrift-0.9.0
+rm -rf thrift-0.9.1
 rm -f thrift.tar.gz
 
 #/tmp/thrift-0.8.0/compiler/cpp/src/generate# cp /tmp/thrift/compiler/cpp/src/generate/t_go_generator.cc .
