@@ -6,7 +6,7 @@
 {% set user = salt['env.user']() %}
 
 
-VER="0.10.22"
+VER="0.10.28"
 # Download & Unpack Node.js 
 echo 'Download Node.js - v. $VER'
 rm -rf /tmp/node-install 
