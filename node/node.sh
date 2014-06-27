@@ -5,6 +5,7 @@
 ##############################################################
 {% set user = salt['env.user']() %}
 
+# force an update
 
 VER="0.10.28"
 # Download & Unpack Node.js 
