@@ -21,46 +21,48 @@ installnode:
       - file: {{pillar['saltbin']}}/nodeinstall
 
 npm:
-  pkg.installed
+  pkg: 
+    - installed
 
 # node supervisor
 nodesupervisor:
   npm.installed:
     - name: supervisor
-    - runas: {{user}}
+    - user: {{user}}
 
 # node docpad
 nodedocpad:
   npm.installed:
     - name: docpad
-    - runas: {{user}}
+    - user: {{user}}
 
 # node node-static
 nodestatic:
   npm.installed:
     - name: node-static
-    - runas: {{user}}
+    - user: {{user}}
 
 # node coffeescript
 nodecoffee:
   npm.installed:
     - name: coffee-script
-    - runas: {{user}}
+    - user: {{user}}
 
 # less css compiler (only web ui needs this, different roles?)
 nodeless:
   npm.installed:
     - name: less
-    - runas: {{user}}
+    - user: {{user}}
 
 # grunt task runner
 nodegrunt:
   npm.installed:
     - name: grunt-cli
-    - runas: {{user}}
+    - user: {{user}}
 
 # grunt task runner
 uglify-js:
   npm.installed:
     - name: uglify-js
-    - runas: {{user}}
+    - user: {{user}}
+
