@@ -20,6 +20,9 @@ installnode:
     - watch:
       - file: {{pillar['saltbin']}}/nodeinstall
 
+npm:
+  pkg.installed
+
 # node supervisor
 nodesupervisor:
   npm.installed:
