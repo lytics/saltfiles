@@ -7,7 +7,7 @@
 
 # force an update
 
-VER="0.10.28"
+VER="0.10.31"
 # Download & Unpack Node.js 
 echo 'Download Node.js - v. $VER'
 rm -rf /tmp/node-install 
